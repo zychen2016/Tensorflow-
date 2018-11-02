@@ -9,9 +9,10 @@ import tensorflow as tf
 import numpy as np
 BATCH_SIZE=8
 SEED=23455
+#产生伪随机数
 rdm=np.random.RandomState(SEED)
 X=rdm.rand(32,2)
-Y_=[[x1+x2+(rdm.rand()/10.0-0.05)]for (x1,x2) in X]
+Y_=[[x1+x2+(rdm.rand()/10.0-0.05)]for (x1,x2) in X]#X为32行两列的矩阵，x1、x2为每一行的第一个第二个数
 #定义神经网络的输入、参数和输出，定义前向传播过程。
 x=tf.placeholder(tf.float32,shape=(None,2))
 y_=tf.placeholder(tf.float32,shape=(None,1))
